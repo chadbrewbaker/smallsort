@@ -5,7 +5,10 @@ The goal is to extend the Rust/C++ standard libraries with opitimized sorts.
 
 [Optimal sorting networks](https://stackoverflow.com/questions/19790522/very-fast-sorting-of-fixed-length-arrays-using-comparator-networks) can be serialized at each level to create a total order.
 
-First pass will probably be "godbolting" the permutations without actually running them to see what the compiler optimization state space is. Then running each class to see how they run and come up with a model of good vs bad permutations.
+
+* Given a fixed swap pattern, what is the most CPU friendly swap macro?
+
+* "Godbolting" the permutations without actually running them to see what the compiler optimization state space is. Then running each class to see how they run and come up with a model of good vs bad sorting network level permutations.
 
 
 Branch free tricks from [GNU libc++](https://github.com/gcc-mirror/gcc/blob/16e2427f50c208dfe07d07f18009969502c25dc8/gcc/sort.cc#L160)
