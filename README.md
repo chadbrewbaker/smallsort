@@ -45,6 +45,6 @@ template <class A, class C, int I0, int I1> struct Swap
 
 ```
 
-(cpp-sort)[https://github.com/Morwenn/cpp-sort)
-(perl generation)[http://pages.ripco.net/~jgamble/nw.html]
+[cpp-sort](https://github.com/Morwenn/cpp-sort)
+[perl generation](http://pages.ripco.net/~jgamble/nw.html)
 
