@@ -26,3 +26,25 @@ do {                                  \
   e1 = (char *)((intptr_t)e1 ^ x);    \
 } while (0)
 ```
+
+[Vectorized](https://github.com/Vectorized/Static-Sort/blob/91ba3750205439a7b668d9e6042d993ffc2afb27/include/static_sort.h#L36) uses
+```c++
+template <class A, class C, int I0, int I1> struct Swap
+	{
+		template <class T> inline void s(T &v0, T &v1, C c)
+		{
+			// Explicitly code out the Min and Max to nudge the compiler
+			// to generate branchless code where applicable.
+			T t = c(v0, v1) ? v0 : v1; // Min
+			v1 = c(v0, v1) ? v1 : v0; // Max
+			v0 = t;
+		}
+		
+		inline Swap(A &a, C c) { s(a[I0], a[I1], c); }
+	};
+
+```
+
+(cpp-sort)[https://github.com/Morwenn/cpp-sort)
+(perl generation)[http://pages.ripco.net/~jgamble/nw.html]
+
